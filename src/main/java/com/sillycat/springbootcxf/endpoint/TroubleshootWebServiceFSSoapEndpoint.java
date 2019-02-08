@@ -12,9 +12,9 @@ import com.sillycat.springbootcxf.service.HelloService;
 @Service
 public class TroubleshootWebServiceFSSoapEndpoint implements TroubleshootWebServiceFSSoap {
 
-//	@Autowired
-//	HelloService helloService;
-	
+	@Autowired
+	HelloService helloService;
+
 	@Override
 	public String serverVersion() {
 		System.out.println("enter method server version");
@@ -33,7 +33,7 @@ public class TroubleshootWebServiceFSSoapEndpoint implements TroubleshootWebServ
 		ArrayOfString arrayOfString = new ArrayOfString();
 		arrayOfString.getString().add(UUID.randomUUID().toString());
 		arrayOfString.getString().add("NONE");
-//		helloService.sayHello("YiYi Kang");
+		helloService.sayHello("YiYi Kang");
 		return arrayOfString;
 	}
 
@@ -67,7 +67,5 @@ public class TroubleshootWebServiceFSSoapEndpoint implements TroubleshootWebServ
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
 
 }
