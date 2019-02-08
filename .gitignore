@@ -1,3 +1,5 @@
+.settings/
+quickbook-service.log
 .classpath
 .project
 target/
