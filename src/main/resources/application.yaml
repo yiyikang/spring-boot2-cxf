@@ -1,0 +1,26 @@
+soap:
+ service:
+  base:
+   url: /services
+ messages:
+  logging: true
+  extract: true
+  
+cxf:
+ servicelist:
+  title: Spring Boot2 CXF
+
+info:
+ app:
+  name: Spring Boot 2 CXF
+  java:
+   version: 1.0.0
+  type: Microservice API
+server:
+ address: 0.0.0.0 
+ port: 50301 
+management:
+ endpoints:
+  web:
+   exposure:
+    include: health,info
