@@ -2,6 +2,8 @@ package com.sillycat.springbootcxf.endpoint;
 
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,25 +13,27 @@ import com.sillycat.springbootcxf.service.HelloService;
 
 @Service
 public class TroubleshootWebServiceFSSoapEndpoint implements TroubleshootWebServiceFSSoap {
+	
+	protected final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	HelloService helloService;
 
 	@Override
 	public String serverVersion() {
-		System.out.println("enter method server version");
+		LOGGER.info("enter method server version");
 		return "1.0";
 	}
 
 	@Override
 	public String clientVersion(String strVersion) {
-		System.out.println("enter method client version");
+		LOGGER.info("enter method client version");
 		return null;
 	}
 
 	@Override
 	public ArrayOfString authenticate(String strUserName, String strPassword) {
-		System.out.println("enter method authenticate, strUserName:" + strUserName + " strPassword:" + strPassword);
+		LOGGER.info("enter method authenticate, strUserName:" + strUserName + " strPassword:" + strPassword);
 		ArrayOfString arrayOfString = new ArrayOfString();
 		arrayOfString.getString().add(UUID.randomUUID().toString());
 		arrayOfString.getString().add("NONE");
