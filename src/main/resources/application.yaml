@@ -2,7 +2,7 @@ soap:
  service:
   base:
    url: /services
-  publishedEndpointUrl: http://localhost:50301
+  publishedEndpointUrl: http://localhost:50301/services/TroubleshootWebServiceFS
  messages:
   logging: true
   extract: true
