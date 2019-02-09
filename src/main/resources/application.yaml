@@ -2,6 +2,7 @@ soap:
  service:
   base:
    url: /services
+  publishedEndpointUrl: http://localhost:50301
  messages:
   logging: true
   extract: true
